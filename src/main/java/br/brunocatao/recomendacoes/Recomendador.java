@@ -120,24 +120,4 @@ public class Recomendador {
 
     return numerador / denominador;
   }
-
-
-  public static void main(String[] args) {
-    Usuario toby = BancoDeDados.getInstance().getUsuario("Toby");
-
-    System.out.println("Usuários parecidos com Toby");
-    getUsuariosSimilares(toby).forEach(s -> {
-      System.out.println(s.getUsuario().getNome() + " - " + s.getScore());
-    });
-
-    System.out.println("\nFilmes recomendados para Toby");
-    getFilmesRecomendados(toby).forEach(s -> {
-      System.out.println(s.getFilme().getNome() + " - " + s.getScore());
-    });
-
-    System.out.println("\nFilmes similares a Superman Returns");
-    getFilmesSimilares(BancoDeDados.getInstance().getFilme("Superman Returns")).forEach(s -> {
-      System.out.println(s.getFilme().getNome() + " - " + s.getScore());
-    });
-  }
 }
